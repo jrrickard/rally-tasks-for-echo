@@ -27,21 +27,20 @@ fermat:src jeremy$ zip -r rally.zip *
 This should create a file with the example and the node modules for rally-node. You can upload this to rally.
 
 
-## Configurie AWS Lambda
+## Configure AWS Lambda
 
-1. Go to the AWS Console and click on the Lambda link. Note: ensure you are in us-east or you won't be able to use Alexa with Lambda.
-2. Click on the Create a Lambda Function or Get Started Now button.
+1. From the AWS Console click on the Lambda link. Make sure you are in us-east or you won't be able to use Alexa with Lambda.
+2. Click on the Create a Lambda Function.
 3. Name the Lambda Function "rally-echo-skill".
 4. Upload the .zip file to the Lambda
 5. Keep the Handler as index.handler (this refers to the main js file in the zip).
-6. Create a basic execution role and click create.
-7. Return to the main Lambda page, and click on "Actions" -> "Add Event Source"
+6. Create an S3 execution role and click create.
+7. Click on "Actions" then "Add Event Source"
 8. Choose Alexa Skills Kit and click submit.
 9. Click on your Lambda function name and copy the ARN to be used later in the Alexa Skill Setup
 
 ## Configure Alexa Skill
 
-### Alexa Skill Setup
 1. Go to the Alexa Console (https://developer.amazon.com/edw/home.html) and click Add a New Skill.
 2. Set "Rally" for the skill name and "rally" as the invocation name, this is what is used to activate your skill. For example you would say: "Alexa, Ask Rally For My Current Bugs."
 3. Select the Lambda ARN for the skill Endpoint and paste the ARN copied from above. Click Next.
